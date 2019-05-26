@@ -44,6 +44,12 @@ class Student
           SQL
     
     DB[:conn].execute(sql, self.name, self.grade)
+    
+    sql = <<-SQL 
+          SELECT * FROM students
+          SQL
+    
+    DB[:conn].execute(sql)
     binding.pry
     
   end 
