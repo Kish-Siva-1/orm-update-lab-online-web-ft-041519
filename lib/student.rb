@@ -39,7 +39,7 @@ class Student
   def save 
     @id = 1
 
-    sql = "UPDATE students SET name = ?, "
+    sql = "UPDATE students SET name = ?, grade = ?"
     
     DB[:conn].execute(sql, self.name)
     
