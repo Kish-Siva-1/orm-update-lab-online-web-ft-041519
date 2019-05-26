@@ -60,8 +60,11 @@ class Student
   def self.create(name, grade) 
     Student.new(name, grade)
     
+    sql = <<-SQL
+    UPDATE students SET name = ?, grade = ? WHERE id = ? 
+    SQL
     
-    
+    DB[:conn].execute(sql, self.name, self.grade, self.id)
   end 
   
   def self.new_from_db 
