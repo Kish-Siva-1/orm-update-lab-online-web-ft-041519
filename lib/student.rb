@@ -40,16 +40,11 @@ class Student
     @id = 1
     binding.pry
     sql = <<-SQL 
-          UPDATE students SET name = ?, grade = ? 
+          UPDATE students SET name = ? 
           SQL
     
-    DB[:conn].execute(sql, self.name, self.grade)
-    
-    sql = <<-SQL 
-          SELECT * FROM students
-          SQL
-    
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql, self.name)
+ 
     binding.pry
     
   end 
