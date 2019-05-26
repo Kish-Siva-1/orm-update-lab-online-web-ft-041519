@@ -43,7 +43,7 @@ class Student
           UPDATE students SET name = ? 
           SQL
     
-    DB[:conn].execute(sql, self.name)
+    DB[:conn].execute(sql, "self.name")
  
     binding.pry
     
