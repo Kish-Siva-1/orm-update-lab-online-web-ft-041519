@@ -38,14 +38,12 @@ class Student
   
   def save 
     @id = 1
-    binding.pry
+
     sql = <<-SQL 
           UPDATE students SET name = ? 
           SQL
     
-    DB[:conn].execute(sql, "self.name")
- 
-    binding.pry
+    DB[:conn].execute(sql, self.name)
     
   end 
   
