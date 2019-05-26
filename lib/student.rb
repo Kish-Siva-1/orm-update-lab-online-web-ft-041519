@@ -63,8 +63,8 @@ class Student
   end 
   
   def self.new_from_db(row) 
-    row[0]
-    row[1]
+    @id = row[0]
+    @row[1]
     row[2]
   end 
   
