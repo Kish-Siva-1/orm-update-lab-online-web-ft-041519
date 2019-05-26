@@ -37,7 +37,7 @@ class Student
   end 
   
   def save 
-
+  
     if !self.id
       sql = <<-SQL
       INSERT INTO students (name, grade)
@@ -45,8 +45,9 @@ class Student
       SQL
    
       DB[:conn].execute(sql, self.name, self.grade)
-      binding.pry
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]  
+    else 
+      binding.pry  
     end 
     
   end 
